@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg: #121212;
+  --primary-text: #ffffff;
+  --contrast-bg: black;
+  --contrast-text: yellow;
+  --contrast-link: lightblue;
+  --dark-mode-button: #333;
+}
+
+/* Reset básico */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Imagem de fundo otimizada */
+body {
+  @apply bg-cover bg-fixed bg-center;
+  background-image: url('../public/images/backimage3.jpg');
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+/* Overlay para melhorar a visibilidade */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Ajustado para melhor visibilidade */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ajustes no layout principal */
+main {
+  @apply w-full p-5 flex-1 bg-transparent;
+}
+
+/* Estilos de acessibilidade */
+.dark-mode {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.dark-mode a {
+  color: #bb86fc;
+}
+
+.dark-mode button {
+  background-color: var(--dark-mode-button);
+  color: #fff;
+}
+
+/* Modo Alto Contraste */
+.high-contrast {
+  background-color: var(--contrast-bg);
+  color: var(--contrast-text);
+}
+
+.high-contrast a {
+  color: var(--contrast-link);
+}
+
+.high-contrast button {
+  background-color: var(--contrast-text);
+  color: var(--contrast-bg);
+}
+
+/* Logo responsivo */
+.logo-seau {
+  width: 270px;
+  height: auto;
+}
