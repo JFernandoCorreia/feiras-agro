@@ -75,6 +75,7 @@ function MapaFeiras() {
   }, []);
 
   return (
+    <>
     <div className="flex flex-col items-center min-h-screen">
       <input
         type="text"
@@ -90,13 +91,13 @@ function MapaFeiras() {
           <h2 className="text-recifeBlue text-3xl font-bold mb-4 text-center">Mapa das Feiras</h2>
           
           <MapContainer
-            center={userLocation || [37.7749, -122.4194]}
+            center={userLocation || [-8.0476, -34.8770]}
             zoom={userLocation ? 13 : 10}
             style={{
               height: '60vh', // Mantém altura ajustada dentro da caixa
               width: '100%',
               minHeight: '300px',
-              marginTop: '10px', // Pequeno espaçamento do título
+              marginTop: '10px',
             }}
             className="relative"
           >
@@ -126,6 +127,24 @@ function MapaFeiras() {
         </div>
       </div>
     </div>
+    
+    <footer className="w-full bg-recifeBlue text-recifeWhite text-center p-4 mt-18 bottom-0">
+        <p>&copy; 2025 Prefeitura do Recife</p>
+        <div className="flex justify-center space-x-4 mt-4">
+          {[ 
+            { href: "https://www.facebook.com/prefeituradorecife", src: "Facebook_logo.png", alt: "Facebook" },
+            { href: "https://x.com/prefrecife", src: "x.png", alt: "X" },
+            { href: "https://www.instagram.com/prefeiturarecife/", src: "instagram.jpeg", alt: "Instagram" },
+            { href: "https://www.youtube.com/channel/UCxMRq-Mv3UimnqOl6aRrM6Q", src: "youtube.png", alt: "YouTube" },
+            { href: "https://www.flickr.com/photos/prefeituradorecife/", src: "flickr.png", alt: "Flickr" },
+          ].map(({ href, src, alt }) => (
+            <a key={alt} href={href} target="_blank" rel="noopener noreferrer">
+              <img src={`${process.env.PUBLIC_URL}/images/${src}`} alt={alt} className="w-6 h-6" />
+            </a>
+          ))}
+        </div>
+      </footer>
+    </>
   );
 }
 

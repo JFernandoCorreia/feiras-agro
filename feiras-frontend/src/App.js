@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import MapaFeiras from "./pages/MapaFeiras";
-import SobrePage from "./pages/SobrePage";
+import AboutPage from "./pages/AboutPage";
 
 
 
@@ -21,7 +21,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/maps" element={<MapaFeiras />} />
-            <Route path="/sobre" element={<SobrePage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </div>
       </Router>

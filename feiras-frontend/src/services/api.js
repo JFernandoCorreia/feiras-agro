@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -8,7 +7,7 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' }
 });
 
-// 🔹 Função para renovar o token automaticamente
+// Função para renovar o token automaticamente
 const renovarToken = async () => {
   try {
     const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/refresh-token`, {
@@ -24,7 +23,7 @@ const renovarToken = async () => {
   }
 };
 
-// 🔹 Interceptor para adicionar token JWT em todas as requisições
+// Interceptor para adicionar token JWT em todas as requisições
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -36,7 +35,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// 🔹 Interceptor para lidar com respostas de erro
+// Interceptor para lidar com respostas de erro
 api.interceptors.response.use(
   (response) => response,
   async (error) => {

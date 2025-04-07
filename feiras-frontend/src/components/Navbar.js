@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Definição das páginas que devem exibir a Navbar
-  const showNavbar = ['/sobre','/maps','/feiras','/register', '/login', '/home'].includes(location.pathname);
+  const showNavbar = ['/about','/maps','/feiras','/register', '/login', '/home'].includes(location.pathname);
 
   // Lista de links da navbar
   const navLinks = [
@@ -16,7 +16,7 @@ const Navbar = () => {
     { to: '/login', label: 'Acesso' },
     { to: '/register', label: 'Cadastro' },
     { to: '/maps', label: 'Mapas' },
-    { to: '/sobre', label: 'Sobre' },
+    { to: '/about', label: 'Sobre' },
   ];
 
   return (

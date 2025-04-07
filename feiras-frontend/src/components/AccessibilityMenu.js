@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { motion } from 'framer-motion'; // Importação do Framer Motion
+import { motion } from 'framer-motion';
 import { FaPlus, FaMinus, FaAdjust, FaSun, FaMoon, FaLightbulb } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 
